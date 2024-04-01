@@ -45,27 +45,26 @@ export const Td = styled.td`
 `;
 
 
-const Grid = ({users, setUsers, setOnEdit}) =>{
-
+const Grid = ({ users, setUsers, setOnEdit }) => {
     const handleEdit = (item) => {
-        setOnEdit(item);
-    }
-
+      setOnEdit(item);
+    };
+  
     const handleDelete = async (id) => {
-        await axios
-            .delete("http://localhost:8800/" + id)
-            .then(({data}) =>{
-                const newArray = users.filter((user) => user.id !==id);
-
-                setUsers(newArray);
-                toast.success(data);
-            })
-            .catch(({data})=> toast.error(data));
-
-        setOnEdit(null);
+      await axios
+        .delete("http://localhost:8800/" + id)
+        .then(({ data }) => {
+          const newArray = users.filter((user) => user.id !== id);
+  
+          setUsers(newArray);
+          toast.success(data);
+        })
+        .catch(({ data }) => toast.error(data));
+  
+      setOnEdit(null);
     };
 
-
+    
     return(
         <Table>
             <Thead>
