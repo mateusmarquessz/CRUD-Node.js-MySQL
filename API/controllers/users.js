@@ -16,23 +16,23 @@ export const getUsers = (_, res) =>{
 
 //Create do CRUD
 export const addUser = (req, res) => {
-    const q =
-      "INSERT INTO usuarios(`nome`, `email`, `fone`, `data_nascimento`) VALUES(?)";
-  
-    const values = [
-      req.body.nome,
-      req.body.email,
-      req.body.fone,
-      req.body.data_nascimento,
-    ];
-  
-    db.query(q, [values], (err) => {
-      if (err) return res.json(err);
-  
-      return res.status(200).json("Usuário criado com sucesso.");
-    });
-  };
-  
+  const q =
+    "INSERT INTO usuarios(`nome`, `email`, `fone`, `data_nascimento`) VALUES(?)";
+
+  const values = [
+    req.body.nome,
+    req.body.email,
+    req.body.fone,
+    req.body.data_nascimento,
+  ];
+
+  db.query(q, [values], (err) => {
+    if (err) return res.json(err);
+
+    return res.status(200).json("Usuário criado com sucesso.");
+  });
+};
+
 
 //Update do CRUD
 export const updateUser = (req, res) => {
