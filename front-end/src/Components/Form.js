@@ -69,7 +69,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put("https://crud-node-js-my-sql-qyaq.vercel.app/" + onEdit.id, {
+        .put("http://localhost:8800/" + onEdit.id, {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
-        .post("https://crud-node-js-my-sql-qyaq.vercel.app", {
+        .post("http://localhost:8800", {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,

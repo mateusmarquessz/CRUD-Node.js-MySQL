@@ -52,7 +52,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
   
     const handleDelete = async (id) => {
       await axios
-        .delete("https://crud-node-js-my-sql-qyaq.vercel.app/" + id)
+        .delete("http://localhost:8800/" + id)
         .then(({ data }) => {
           const newArray = users.filter((user) => user.id !== id);
   
