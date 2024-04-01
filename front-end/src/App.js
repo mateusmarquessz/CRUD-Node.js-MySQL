@@ -48,7 +48,7 @@ function App() {
         <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
         <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
       </Container>
-      <GlobalStyle />
+      <GlobalStyle/>
     </>
   );
   
